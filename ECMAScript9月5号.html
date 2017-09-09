@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+
+/*//1. 表格十行十列：
+	document.write('<table border=1 cellspacing=0 align=center>')
+	for(var j=1;j<10;j++){
+		document.write('<tr bgcolor=green>');
+		for(var i=1;i<10;i++){
+			document.write('<td>'+i+'x'+j+'</td>');
+		}
+		document.write('</tr>')
+	}    
+	document.write('</table>') */
+
+/*//2.乘法表：
+	document.write('<table border=1 cellspacing=0 align=center>')
+	for(var j=1;j<10;j++){
+		document.write('<tr bgcolor=blue>');
+		for(var i=1;i<j;i++){
+			document.write('<td>'+i+'x'+j+'</td>');
+		}
+		document.write('</tr>')
+	}    
+	document.write('</table>') */
+
+
+/*//3. 修改背景颜色
+	document.write('<table border=1 cellspacing=0 align=center>')
+	for(var j=1;j<10;j++){
+		if(j%2==0){
+		   document.write('<tr bgcolor=yellow>');
+		}
+		if(j%2==1){
+		   document.write('<tr bgcolor=red>');
+		}
+		
+		for(var i=1;i<j;i++){
+			document.write('<td>'+i+'x'+j+'</td>');
+		}
+		document.write('</tr>')
+	}    
+	document.write('</table>')*/
+
+
+/*//4. 十行十列的另外一种方法
+     var table="<table>";
+     for(var i=1;i<11;i++){
+     	if(i%2==0){
+               var color='red';
+     	}else{
+     		color="green";
+     	}          
+     	 table+='<tr bgcolor='+color+'>'; 
+     	
+     	for(var j=1;j<11;j++){
+     		table+='<td>'+i+'*'+j+'</td>';
+     	}
+     	table+='</tr>';
+     }
+     table+="</table>";
+     document.write(table);*/
+
+/*//5. 金字塔的排列
+    var row=5;
+     for(var i=1;i<=row;i++){
+     	for(var j=1;j<=row-i;j++){
+     	document.write('&nbsp');
+     	}
+     	for(var j=1;j<=2*i-1;j++){
+     		document.write("*");
+     	}
+     	document.write('<br/>');
+     }*/
+
+
+/*//6. 金字塔
+    var row=5;
+     for(var i=1;i<=row;i++){
+     	for(var j=1;j<=row-i;j++){
+     		document.write('&nbsp');
+     	}
+     	for(var j=1;j<=2*i-1;j++){
+     		document.write('*');
+     	}
+     	document.write('<br/>');
+     }*/
+     	
+/*//7. 1 1 2 3 5 8 13 21 ...前面两两个相加 （斐波那契数列）  
+      var i=1;j=1;
+      for(var k=0;k<=100;){
+      	k=i+j;
+      	document.write(k+'&nbsp');
+      	i=j;
+      	j=k;
+      }*/
+
+
+/*//8. 数组（可以存任意的）
+// 数据的应用怎么知道一行的最大值
+  var arr=[2,6,12,30,15,90,85,60]
+   var max=[0];
+   for(var i=0;i<=arr.length;i++){
+      if(max<arr[i]){
+      	max=arr[i];
+      }
+   }
+   console.log(max);*/
+
+
+/*//9. 排序
+ var arr=[2,6,12,30,15,90,85,60]
+  for(var i=0;i<arr.length;i++){
+  	for(var j=i+1;j<arr.length;j++){
+  		if(arr[i]>arr[j]){
+  		var tmp=arr[i]
+  		arr[i]=arr[j];
+  		arr[j]=tmp;
+  		}
+  	}
+  }
+ console.log(arr);*/
+
+
+/*//10. 另一种循环方式 while (循环的条件)
+// 当条件成立的就会执行，如果不满足，就不执行。
+   var i=1;
+   while(i<=10){
+   	 console.log(i);
+   	 i++;
+   }*/
+
+
+/*//11. 1-10求和
+  var sum=0;
+  for(var i=1;i<11;i++){
+  	sum+=i;
+  }
+  console.log(sum);*/
+
+   
+/*  //12.  while 循环
+  var i=11;
+  while(i<10){
+  	console.log(i)
+    i++
+  }
+*/
+  
+/*//13.  do while循环
+ var i=11;
+   do{
+   console.log(i);
+   	i++
+   }
+   while(i<=10)*/
+   
+
+/* //14. 把有空的去了
+   var arr=[1,2,3,,4,5,,6,7,8]
+   var newarr1=[]
+  for(var i=0;i<=arr.length;i++){
+   if(arr[i]!=undefined){
+   	newarr1[newarr1.length]=arr[i]
+   }
+  }
+  console.log(newarr1);*/
+
+
+/*//15. 把空的去了的另外一个方法
+var arr=[1,2,,3,4,5,,6,7,8,,9];
+var arr3=[];
+for(var i=0;i<=arr.length;i++){
+	if((typeof arr[i]) !='undefined'){
+		arr3[arr3.length]=arr[i]
+	}
+} 
+console.log(arr3)*/
+
+
+/*//16. 二维最大值
+ var zhangsan=[80,90,95];
+  var lisi=[80,88,98];
+  var huangwu=[60,90,75];
+  var classes=[zhangsan,lisi,huangwu]
+  var max=classes[0][0];
+  for(var i=0;i<classes.length;i++){
+  	for(var j=0;j<classes[i].length;j++){
+  		if(max<classes[i][j]){
+  			max=classes[i][j]
+  		}
+  	}
+  }
+   console.log(max)*/
+
+
+/*代码段怎么可以实现复用 
+函数: 把实现某一个实现特定功能的代码打包复用
+定义一个函数: 
+语法：
+function 函数名字(){
+              写特定功能一段代码
+              }
+调用函数：函数名();//（前后调用都可以）
+
+字面量声明：
+var fn = function (){
+	alert(1);
+}
+   fn(); //调用函数（要在声明后面调用；如果声明前面调用时,是undefined()，会出错。）
+   //实现任意行，任意列的表格。（参数）
+   //改函数体的变量-->形参（rows,cols）-->实参（调用时）*/
+
+</script>

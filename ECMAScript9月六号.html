@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+ /*//9.6号函数的打包
+
+ //1.十行十列表格   
+    table(10,10);
+    table(5,6);
+    function table(rows,cols){
+	     var table="<table>";
+     for(var i=1;i<rows;i++){
+     	if(i%2==0){
+               var color='red';
+     	}else{
+     		color="green";
+     	}          
+     	 table+='<tr bgcolor='+color+'>'; 
+     	
+     	for(var j=1;j<cols;j++){
+     		table+='<td>'+i+'*'+j+'</td>';
+     	}
+     	table+='</tr>';
+     }
+     table+="</table>";
+     document.write(table);
+     }*/
+
+
+/*//2.二维最大值
+var add=[
+   [55,8,12,60],
+   [50,18,12,6],
+   [25,80,12,1]
+]
+  max(add);
+ function max(arrl){
+  var max=arrl[0][0];
+  for(var i=0;i<arrl.length;i++){
+  	for(var j=0;j<arrl[i].length;j++){
+  		if(max<arrl[i][j]){
+  			max=arrl[i][j]
+  		}
+  	}
+  }
+   console.log(max);
+  }*/
+
+
+/*//3.把有空的去掉
+var bb=[1,2,,3,4,5,,6,7,8,,9]; 
+  kong(bb);
+ function kong(arrll){
+var arr2=[];
+for(var i=0;i<=arrll.length;i++){
+	if(arrll[i]!=undefined){
+		arr2[arr2.length]=arrll[i]
+	}
+}  console.log(arr2)
+
+}*/
+
+
+/*//4. 排序(从大到小排序)
+ var cc=[2,6,12,30,15,90,85,60];
+  pai(cc);
+ function pai(arr3){
+  for(var i=0;i<arr3.length;i++){
+  	for(var j=i+1;j<arr3.length;j++){
+  		if(arr3[i]<arr3[j]){
+  		var tmp=arr3[i]
+  		arr3[i]=arr3[j];
+  		arr3[j]=tmp;
+  		}
+  	}
+  }
+ console.log(arr3);
+ }*/
+
+
+ /*//5. 1 1 2 3 5 8 13 21 ...前面两两个相加 （斐波那契数列）
+ 
+   var a=2;b=2;arrd=200;
+   lieshu(a,b,arrd);
+     function lieshu(front1,front2,maxA){
+      var i=front1;j=front1;
+      for(var k=0;k<=maxA;){
+      	k=i+j;
+      	document.write(k+'&nbsp');
+      	i=j;
+      	j=k;
+      }
+      } */
+
+
+/*//6. 金字塔
+   var row=10;
+    king(row);
+    function king(row){     
+     for(var i=1;i<=row;i++){
+     	for(var j=1;j<=row-i;j++){
+     		document.write('&nbsp');
+     	}
+     	for(var j=1;j<=2*i-1;j++){
+     		document.write('*');
+     	}
+     	document.write('<br/>');
+     }
+     }*/
+
+
+/*//7. 单维最大值
+ var gg=[5,8,9,4,2,55,41,99,77,128,56,34];
+   zui(gg);
+   function zui(arr){
+   var max=[0];
+   for(var i=0;i<arr.length;i++){
+   if(max<arr[i]){
+     max=arr[i];
+   }     
+   }
+  console.log(max);
+  }*/
+
+/*//8. while的例子
+  var i=11;
+  while(i<10){
+      console.log(i);
+      i++;
+  }*/
+
+
+/*//9.  do while 例子
+  var i=1;
+    do{
+    	console.log(i)
+    	i++;
+    }while(i<10);*/
+
+
+/*//10. for的例子（求和）
+  var sum=0;
+  for(var i=1;i<11;i++){
+  	  sum+=i
+  }
+   console.log(sum);*/
+
+</script>
+	
+</body>
+</html>

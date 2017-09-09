@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//9.7号//数组是否存在某一个值：
+
+/*//1. 弹出参数
+fn(23)
+function fn(value){
+	alert(value);
+}*/
+
+
+/*//2. 在数组的后面添加任意个数组元素
+ var bb=[1,2,3,4,5,6,7,8]
+ push(bb,'a','b');
+ function push(arr){
+ 	for(var i=1;i<arguments.length;i++){
+      arr[arr.length]=arguments[i]    
+ 	}
+ 	console.log(arr);
+ }*/
+
+
+ /*//3. rest：用于接收剩余参数，必须写在参数订最后，它是一个数组；输出时候不需要加...
+   var bb=[1,2,3,4,5,6,7,8];
+   push(bb,'a','b','c','d');
+   function push(arr,...value){
+      for(var i=0;i<value.length;i++){
+      	arr[arr.length]=value[i]
+      }
+      console.log(value);
+   }
+*/
+
+
+/*//4. 返回值：return 
+//判断数据存在某一特定值，存在true，false
+   var arr=[2,5,6,8,49,12,3,10,2]
+  var result=exist(arr,5);
+    alert(result);
+  function exist(arr,value){
+       for(var i=0;i<arr.length;i++){
+        判断条件：arr Array arguments>1
+        if(!(typeof arr=='object' && arguments.length>1)){
+                    return '输入错误';
+           }
+        if(arr[i]==value){
+          	return true;
+          }
+       }
+       return false;
+  }*/
+
+
+/*//5. 一个函数调用再嵌套一个函数：排列数组
+  var arr=[25,6,41,20,32,15,8,9,40];
+  //  sortup(arr);
+  // sortwon(arr);
+  // 反向排列
+  function sortwon(arr){
+  for(var i=0;i<arr.length;i++){
+  	for(var j=i+1;j<arr.length;j++){
+  		if(arr[i]<arr[j]){
+  			var tmp=arr[i];
+  			arr[i]=arr[j];
+  			arr[j]=tmp;
+  		} 		
+  	}
+  }
+  	console.log(arr);
+  	}
+//正排列
+ function sortup(arr){
+  for(var i=0;i<arr.length;i++){
+  	for(var j=i+1;j<arr.length;j++){
+  		if(arr[i]>arr[j]){
+  			var tmp=arr[i];
+  			arr[i]=arr[j];
+  			arr[j]=tmp;
+  		} 		
+  	}
+  }
+  	console.log(arr);
+   }*/
+   
+/*//方法二：
+  var restll=sort(arr);
+   console.log(restll);
+  function sort(arr,art){
+  	if(art==undefined){
+  	   art="<";
+  	} 	
+  	if(art=='<'){
+  	  return sortup(arr);
+  	}
+  	if(art=='>'){
+  	   return sortwon(arr);
+  	}
+  }*/
+
+
+/* //默认参数的四种方法
+
+//1. 分支if   
+if(type==undefined){
+          storeup(arr)
+              }
+
+//2. 三元式表达式 
+type = type==undefined?'<':type;
+
+//3.逻辑运算符 ||（或）  
+type = type ||'<';//或
+//4. es6            
+//                默认值直接写(一般情况都是写在最后)
+function sort(arr,type='<'){
+
+}
+
+//4. ES6（阮一峰）
+例子：
+function (type=默认值){
+	
+}*/
+
+
+/*//数组转换成字符串？
+//参数： arr:特定的数组   atr：链接符
+ var arr=[1,2,3,4,5,6];
+ function fn(arr,str1){
+ 	var str="";//空字符串
+ 	for(var i=0;i<arr.length;i++){
+ 		if(i<arr.length-1){
+           str+=arr[i]+str1;//去了最后一个字符的-
+ 		}else{
+ 		str+=arr[i];
+ 	}
+ 	}
+ 	return str;
+ }
+  var result1=fn(arr,"-");
+  console.log(result1);*/
+
+
+/*//filter:过滤器 数组里面偶数的数组元素
+ var arr=[1,2,3,4,5,6];
+ var newarr=[];
+ function filter(arr){
+ 	for(var i=0;i<arr.length;i++){
+         if(arr[i]%2==0){
+         	newarr[newarr.length]=arr[i];
+         }
+ 	}
+ 	return newarr;
+ } 
+
+var result=filter(arr);
+console.log(result)
+// console.log(filter(arr));
+*/
+
+
+//全局作用域：任意的位置都起作用
+//局部作用域（函数作用域）：只能在函数里面才会起作用。   
+/*  var num=10;
+  function fn(){
+  	alert(num);
+  	var num='a';
+  	alert(num);
+  	fn1();
+  function fn1(){
+  	alert(num);
+  	 num='x';
+  	alert(num);
+  }
+  }
+  alert(num);//10
+  fn();*/
+
+  
+/*//例子：
+ function aa(num1,num2){
+     return num1*2+num2;
+ }
+ function bb(num1,num2){
+     return num1*2-num2;
+ }
+
+ function cc(num1,num2){
+     return num1+num2;
+ }
+ var rullt=aa(1,2);
+ // var rullt=bb(2,3);
+ // var rullt=cc(2,5);
+ console.log(rullt)
+
+function math(num1,num2,fn){
+	return fn(num1,num2)
+}
+var rullt=math(2,5,aa)
+console.log(rullt)
+*/
+
+//map ：映射 是一种对应关系
+/*	 var arr=[1,2,3,4,5,6]
+	 var  result=map(arr,function(value){
+	 	return value*2
+	 });
+	console.log(result);
+	
+	function map(arr,fn){
+		var newarr=[];
+		for(var i=0;i<arr.length;i++){
+			//arr[i]
+		  newarr[newarr.length]=fn(arr[i]);
+		}
+		return newarr;
+	}
+*/
+ 
+/* var bb=[1,2,3,4,5,6];
+ map(bb,function(value){
+ 	return value*2
+ });
+ function map(arr,fn){
+   var newbb=[];
+   for(var i=0;i<bb.length;i++){
+   	 newbb[newbb.length]=fn(bb[i]);
+   }
+   console.log(newbb);
+ }
+*/
+
+</script>
+	
+</body>
+</html>
