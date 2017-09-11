@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+//9月9号
+
+/*//indexOf首次出现的位置
+//在数组里查找一个元素，存在的返回来下标，不存在的返回-1。
+  var arr=[1,2,3,4,2,5,7]
+  var wo =indexOf(arr,7);
+  alert(wo);
+  function indexOf(arr,value){
+  for(var i=0;i<arr.length;i++){
+      if(arr[i]==value){
+           return i;
+      }       
+    }return -1;
+}
+*/
+
+
+/*//lastindexOf 最后一次出现的位置
+  var arr=[1,2,3,4,2,5,7,2]
+  var wo =lastindexOf(arr,7);
+  alert(wo);
+  function lastindexOf(arr,value){
+  for(var i=arr.length-1;i>=0;i--){
+      if(arr[i]==value){
+           return i;
+      }       
+    }return -1;
+}*/
+
+
+/*//  reverse 反转
+  var arr=[1,2,3,4,5]
+ var fan= reverse(arr);
+ console.log(fan);
+  function reverse(arr){
+    var newarr=[];
+    for(var i=arr.length-1;i>=0;i--){
+    //添加    
+     // newarr[newarr.length]=arr[i]
+      push(newarr,arr[i]);
+     }
+     return newarr;
+  }
+//                    接收arr[i]
+  function push(arr,...rest){
+    for(var i=0;i<rest.length;i++){
+      arr[arr.length]=rest[i]
+    }
+  }*/
+
+
+/*//万能的添加或者删除
+//万能删除
+var arr=[1,2,3,4,5];
+// console.log(splicedelete(arr,1,2));
+//                       位置 删除个数
+function splicedelete(arr,pos,num){
+    var newarr=[];
+    for(var i=0;i<arr.length;i++){
+     if(i>=pos && i<pos+num){
+      continue;
+    }
+    newarr[newarr.length]=arr[i];    
+    }
+    return newarr;
+} 
+
+//万能添加
+// console.log (spliceAdd(arr,2,'a','b','c','d'))
+  function spliceAdd(arr,pos,...rest){
+    var newarr=[];
+    for(var i=0;i<pos;i++){
+        newarr[newarr.length]=arr[i];
+    }
+    for(var i=0;i<rest.length;i++){
+      newarr[newarr.length]=rest[i]
+    }
+    for(var i=pos;i<arr.length;i++){
+      newarr[newarr.length]=arr[i]
+    }
+    return newarr;
+  }
+
+//...rest在其他地方会把数组拆开成一个个元素。
+//...rest在函数里会把元素打包好。
+//万能  添加  删除
+//1.小于pos时，放前面
+//2.等于pos时，放添加的
+//3.大于pos时，放后面的
+ console.log (splice(arr,1,3,'a','b','c','d'))
+ //                 位置  删个数  添加把元素打包好
+ function splice(arr,pos,num,...rest){
+  var newarr=splicedelete(arr,pos,num);
+  if(rest.length>0){
+   newarr=spliceAdd(newarr,pos,...rest);//...rest把数组拆开成一个个元素
+  }
+  return newarr;
+ }*/
+
+
+/*//some every 区别
+//some 只有一个是真的返回true
+  var arr=[-1,0,1,2,3,4,5,6];
+   var only = some(arr,function(value){
+    	return value>0;
+    })
+    alert(only);
+  function some(arr,fn){
+  	for(var i=0;i<arr.length;i++){
+  		if(fn(arr[i])){
+  			return true;
+  		}
+  	}
+  	return false;
+  }
+
+//every 是每一个都是true时，才返回true。
+  var tow=every(arr,function(value){
+    	return value>0;
+    })
+    alert(tow); 
+    function every(arr,fn){
+    	for(var i=0;i<arr.length;i++){
+    		if(!fn(arr[i])){
+    			return false;
+    		}
+    	}
+    	return true;
+    } */
+
+
+/*//递归函数 自己调用自己本身，需要有一个出口 (不是循环)
+ fn(1);
+function fn(num){
+	if(num<5){
+		fn(++num);
+	}
+	alert(num)
+}*/
+ 
+/* //递归函数运行的过程
+ fn1();
+ function fn1(){
+ 	fn2();
+ 	alert(1); 	
+ }
+ function fn2(){
+ 	fn3();
+ 	alert(2); 	
+ }
+  function fn3(){
+  	fn4();
+ 	alert(3);	
+ }
+  function fn4(){
+ 	alert(4);
+ }*/
+   
+
+/* //复制arr的值到arr1
+ var arr=[1,2,3,4,5,6,7]
+ //copy的是地址(浅拷贝)
+ var arr1=arr;
+  arr[1]='a';
+  arr1[3]='x';
+ console.log(arr)
+ console.log(arr1)
+
+ //copy的是值（深拷贝）
+ var arr1=[];
+ for(var i=0;i<arr.length;i++){
+ 	arr1[i]=arr[i]
+ }            
+  arr[1]='a';
+  arr1[3]='x';
+ console.log(arr);
+ console.log(arr1);
+*/
+
+
+/* //深拷贝和递归函数结合
+ var arr=[1,2,3,4,['x','y','z']];
+ var arr1=copy(arr);
+  arr[2]=0;
+  arr1[4][2]='b';
+ console.log(arr1)
+ console.log(arr)
+ function copy(arr){
+ 	var newarr=[];
+ 	for(var i=0;i<arr.length;i++){	
+ 	if(typeof arr[i]=='object'){
+        newarr[i]=copy(arr[i])
+ 	}else{
+ 		newarr[i]=arr[i]
+ 	}
+ 	}
+ 	return newarr;
+ }*/
+
+</script>
+	
+</body>
+</html>
