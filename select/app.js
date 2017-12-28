@@ -1,0 +1,22 @@
+new Vue({
+    el:"#root",
+    data:{
+       datas:[
+           {id:1,title:1111111},
+           {id:2,title:222222},
+           {id:3,title:333333},
+           {id:4,title:444444},
+       ],
+       title:"",
+      status:false,
+    },
+    methods:{
+        aa(){
+           this.status=true;
+        },
+        bb(val){
+            this.title=val;
+            this.status=false
+        }
+    }
+})
